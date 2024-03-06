@@ -12,4 +12,5 @@ test('renders learn react link', () => {
   );
 
   expect(getByText(/learn/i)).toBeInTheDocument();
+  // const element = screen.getByText('your text');
 });
