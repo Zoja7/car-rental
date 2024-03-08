@@ -4,15 +4,18 @@ import { createRoot } from 'react-dom/client';
 // import { store } from './redux/store';
 import { App } from 'components/App';
 import './index.css';
+import { BrowserRouter } from 'react-router-dom';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
 
 root.render(
   <React.StrictMode>
-    {/* <Provider store={store}> */}
-    <App />
-    {/* </Provider> */}
+    <BrowserRouter basename="/car-rental">
+      {/* <Provider store={store}> */}
+      <App />
+      {/* </Provider> */}
+    </BrowserRouter>
   </React.StrictMode>
 );
 
