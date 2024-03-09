@@ -1,0 +1,14 @@
+.cardItem {
+  display: flex;
+  flex-direction: column;
+  /* max-width: 274px;
+  height: 426px; */
+  overflow: hidden;
+  flex-basis: calc((100% - 84px) / 4);
+}
+
+.cardImage {
+  object-fit: cover;
+  height: 200px;
+  border-radius:  2px;
+}

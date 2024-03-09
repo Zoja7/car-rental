@@ -6,27 +6,27 @@ import { HeaderStyled, StyledLink } from './Layout.styled';
 
 const Layout = () => {
   return (
-    <Container>
-      <nav>
-        <HeaderStyled>
-          <StyledLink className="headerLink" to="/">
-            Home
-          </StyledLink>
-          <StyledLink className="headerLink" to="/catalog">
-            Catalog
-          </StyledLink>
-          <StyledLink className="headerLink" to="/favorite">
-            Favorite
-          </StyledLink>
-        </HeaderStyled>
-      </nav>
-      <main>
-        <Suspense fallback={<Loader />}>
-          {' '}
-          <Outlet />
-        </Suspense>
-      </main>
-    </Container>
+    <>
+      <HeaderStyled>
+        <StyledLink className="headerLink" to="/">
+          Home
+        </StyledLink>
+        <StyledLink className="headerLink" to="/catalog">
+          Catalog
+        </StyledLink>
+        <StyledLink className="headerLink" to="/favorite">
+          Favorite
+        </StyledLink>
+      </HeaderStyled>
+      <Container>
+        <main className="mainWrapper">
+          <Suspense fallback={<Loader />}>
+            {' '}
+            <Outlet />
+          </Suspense>
+        </main>
+      </Container>
+    </>
   );
 };
 

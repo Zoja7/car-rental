@@ -1,7 +1,34 @@
 import { configureStore } from '@reduxjs/toolkit';
+// import {
+//   persistStore,
+//   // persistReducer,
+//   FLUSH,
+//   REHYDRATE,
+//   PAUSE,
+//   PERSIST,
+//   PURGE,
+//   REGISTER,
+// } from 'redux-persist';
+// import storage from 'redux-persist/lib/storage';
+import { cardsReducer } from './cards/cards.slice';
 
-const store = configureStore({
-  // конфігурація вашого store
+
+
+// const authConfig = {
+//   key: 'cards',
+//   storage,
+//   whitelist: ['cards'],
+// };
+export const store = configureStore({
+  reducer: {
+    cardsStore: cardsReducer,
+  },
+  // middleware: getDefaultMiddleware =>
+  //   getDefaultMiddleware({
+  //     serializableCheck: {
+  //       ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+  //     },
+  //   }),
 });
 
-export { store };
+// export const persistor = persistStore(store);
