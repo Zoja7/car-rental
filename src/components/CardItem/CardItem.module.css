@@ -1,4 +1,5 @@
 .cardItem {
+  border-radius: 14px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
