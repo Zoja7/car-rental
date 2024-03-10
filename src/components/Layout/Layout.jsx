@@ -2,7 +2,7 @@ import Container from 'components/Container/Container';
 import Loader from 'components/Loader/Loader';
 import React, { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import { HeaderStyled, StyledLink } from './Layout.styled';
+import { HeaderStyled, MainWrapper, StyledLink } from './Layout.styled';
 
 const Layout = () => {
   return (
@@ -19,12 +19,12 @@ const Layout = () => {
         </StyledLink>
       </HeaderStyled>
       <Container>
-        <main className="mainWrapper">
+        <MainWrapper>
           <Suspense fallback={<Loader />}>
             {' '}
             <Outlet />
           </Suspense>
-        </main>
+        </MainWrapper>
       </Container>
     </>
   );

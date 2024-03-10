@@ -1,12 +1,11 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
-import css from './CardItem.module.css'
+import css from './CardItem.module.css';
 import DefaultImage from '../../images/vehicle-placeholder.png';
 
 const CardItem = ({ card }) => {
   const {
     img,
-    avatar,
     photoLink,
     make,
     year,
@@ -17,43 +16,46 @@ const CardItem = ({ card }) => {
     model,
     id,
     accessories,
-    createdAt,
-    name,
-    cars,
   } = card;
 
-  const addressParts = address && typeof address === 'string' ? address.split(', ') : []
-  const cityAndCountry = addressParts.slice(-2).join('|');
+  const addressParts =
+    address && typeof address === 'string' ? address.split(', ') : [];
+  const cityAndCountry = addressParts.slice(-2).join(' | ');
 
-const randomAccessory = accessories && Array.isArray(accessories) && accessories.length > 0
-? accessories[Math.floor(Math.random() * accessories.length)]
-: '';
+  const randomAccessory =
+    accessories && Array.isArray(accessories) && accessories.length > 0
+      ? accessories[Math.floor(Math.random() * accessories.length)]
+      : '';
 
   return (
     <li key={nanoid()} className={css.cardItem}>
       <img
-        className= {css.cardImage}
-        src= {img ||avatar || photoLink}
-        alt={make||name}
+        loading="lazy"
+        className={css.cardImage}
+        src={img || photoLink}
+        alt={make}
         onError={e => {
           e.currentTarget.src = DefaultImage;
         }}
         width={274}
       />
-      <div key={nanoid()} className="cardTextContent">
-        <h3>
-          <span>
-            {make || createdAt} {year}
-          </span>
-          <span>{rentalPrice}</span>
+      <div key={nanoid()} className={css.cardTextContent}>
+        <h3 className={css.titleWrapper}>
+          <p className={css.model}>
+            {make} {year}
+          </p>
+          <p className={css.price}>
+            {rentalPrice}
+          </p>
         </h3>
-        <p>
-          {cityAndCountry}|{rentalCompany}
+        <p className={css.addressAndCompany}>
+          {cityAndCountry} | {rentalCompany} | Premium
         </p>
-        <p>
-          {type}|{model|| cars}|{id}|{randomAccessory}
+        <p className={css.features}>
+          {type} | {model} | {id} | {randomAccessory}
         </p>
       </div>
+       <button className= {css.learnMore}>Learn more</button>
     </li>
   );
 };

@@ -16,10 +16,6 @@ const CatalogPage = () => {
   const cards = useSelector(selectCards);
   const isLoading = useSelector(selectCardsIsLoading);
   const error = useSelector(selectCardsError);
-  // const currentPage = useSelector(selectCardsCurrentPage);
-  // const limit = useSelector(selectCardsLimit);
-  // const [currentPageData, setCurrentPageData] = useState([]);
-
  
   const showCards = !error && !isLoading && cards && cards.length > 0;
   useEffect(() => {
@@ -39,7 +35,6 @@ const CatalogPage = () => {
     <>
       {isLoading && <Loader />}
       {showCards && <CardsList />}
-      {/* {showCards && <button type="button"onClick={handlePageChange} >Load more</button>} */}
     </>
   );
 };

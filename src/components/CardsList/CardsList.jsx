@@ -13,15 +13,15 @@ const CardsList = () => {
     setVisibleData(prevVisibleData => prevVisibleData + 12);
   };
   return (
-    <div className="cardsListWrapper">
+    <div className={css.cardsListWrapper}>
       <ul className={css.cardsList}>
         {cards.slice(0, visibleData).map(card => {
           return <CardItem key={nanoid()} card={card} />;
         })}
       </ul>
       {visibleData < cards.length && (
-        <button type="button" onClick={handleLoadMore} key={nanoid()}>
-          Load More
+        <button className={css.loadMore} type="button"onClick={handleLoadMore} key={nanoid()}>
+          Load more
         </button>
       )}
     </div>

@@ -1,6 +1,31 @@
+.cardsListWrapper{
+    padding-bottom: 150px;
+    max-width: 1184px;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
 .cardsList{
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: baseline;
     justify-content: center;
+    gap: 28px;
+    
+}
+.loadMore{
+    display: block;
+    border: none;
+    margin: 0 auto;
+    color: rgb(52, 112, 255);
+    background-color: transparent;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.loadMore:hover{
+    color: rgb(11, 68, 205);
+    text-decoration: underline #3470FF;
 }

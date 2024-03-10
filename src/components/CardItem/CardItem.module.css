@@ -1,14 +1,58 @@
 .cardItem {
   display: flex;
   flex-direction: column;
-  /* max-width: 274px;
-  height: 426px; */
   overflow: hidden;
   flex-basis: calc((100% - 84px) / 4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
+.cardItem:hover {
+  transform: translateX(-5px) translateY(-10px); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
 .cardImage {
   object-fit: cover;
   height: 200px;
-  border-radius:  2px;
+  border-radius: 14px;
+  margin-bottom: 14px;
+}
+.learnMore{
+  display: block;
+  background-color: rgb(52, 112, 255);
+  padding: 12px 99px 12px 99px;
+  border: none;
+  color:white;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.learnMore:hover{
+  background-color: rgb(11, 68, 205);
+}
+.cardTextContent{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 28px;
+  width: 274px;
+  height: 72px;
+}
+.titleWrapper{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.model, .price{
+font-weight: 500;
+font-size: 16px;
+line-height: 1.5;
+color:#121417;
+}
+.addressAndCompany, .features{
+  font-weight: 400;
+  font-size: 12px ;
+  line-height: 1.5;
+  color:rgba(18, 20, 23, 0.5) ;
 }
