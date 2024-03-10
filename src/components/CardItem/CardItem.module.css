@@ -35,7 +35,7 @@
 }
 .cardTextContent{
   display: flex;
-  padding: 4px;
+  padding: 2px;
   flex-direction: column;
   margin-bottom: 28px;
   width: 274px;
