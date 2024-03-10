@@ -17,6 +17,9 @@ const CardItem = ({ card }) => {
     model,
     id,
     accessories,
+    createdAt,
+    name,
+    cars,
   } = card;
 
   const addressParts = address && typeof address === 'string' ? address.split(', ') : []
@@ -31,7 +34,7 @@ const randomAccessory = accessories && Array.isArray(accessories) && accessories
       <img
         className= {css.cardImage}
         src= {img ||avatar || photoLink}
-        alt={make}
+        alt={make||name}
         onError={e => {
           e.currentTarget.src = DefaultImage;
         }}
@@ -40,7 +43,7 @@ const randomAccessory = accessories && Array.isArray(accessories) && accessories
       <div key={nanoid()} className="cardTextContent">
         <h3>
           <span>
-            {make} {year}
+            {make || createdAt} {year}
           </span>
           <span>{rentalPrice}</span>
         </h3>
@@ -48,7 +51,7 @@ const randomAccessory = accessories && Array.isArray(accessories) && accessories
           {cityAndCountry}|{rentalCompany}
         </p>
         <p>
-          {type}|{model}|{id}|{randomAccessory}
+          {type}|{model|| cars}|{id}|{randomAccessory}
         </p>
       </div>
     </li>

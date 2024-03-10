@@ -10,7 +10,7 @@ import { configureStore } from '@reduxjs/toolkit';
 //   REGISTER,
 // } from 'redux-persist';
 // import storage from 'redux-persist/lib/storage';
-import { cardsReducer } from './cards/cards.slice';
+import { cardsReducer} from './cards/cards.slice';
 
 
 
@@ -23,6 +23,7 @@ export const store = configureStore({
   reducer: {
     cardsStore: cardsReducer,
   },
+ 
   // middleware: getDefaultMiddleware =>
   //   getDefaultMiddleware({
   //     serializableCheck: {
@@ -30,5 +31,6 @@ export const store = configureStore({
   //     },
   //   }),
 });
+
 
 // export const persistor = persistStore(store);

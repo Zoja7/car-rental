@@ -36,4 +36,6 @@ const cardsSlice = createSlice({
 });
 
 // slice`s reduser
+// export const cardsReducer = cardsSlice.reducer;
+
 export const cardsReducer = cardsSlice.reducer;
